@@ -341,7 +341,7 @@ def answer_check():
 def add_to_sheet(data):
     """Adding user responses to sheet"""
     responses_sheet.append_row(data)
-    print("Added successfully.")
+    print("Responses recorded successfully.")
 
 def print_averages():
     return
