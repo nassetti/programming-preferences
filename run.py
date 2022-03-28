@@ -344,7 +344,7 @@ def add_to_sheet(data):
     print("Added successfully.")
 
 def print_averages():
-    
+    return
 
 user_input()
 
