@@ -18,7 +18,7 @@ CHOICES_INDUSTRY = [
     "Financial Services / Banking", "Academia", "Law", "Other"
     ]
 CHOICES_LANGUAGE = [
-    "I do not know any programming languages", "Python", "JavaScript",
+    "I do not know any", "Python", "JavaScript",
     "C", "Java", "VBA", "SQL", "Swift", "Ruby", "Other"
     ]
 CHOICES_LENGTH = [
