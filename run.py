@@ -220,15 +220,15 @@ def results():
     print("1. What is your name?\n")
     print(f"\t {name} \n")
     print("2. What is your email?\n")
-    print(f"\t {email} \n")
+    print(f"\t {email}")
     print("3. What industry do you work in?\n")
-    print(f"\t {CHOICES_INDUSTRY[int(industry_choice) - 1]} \n")
+    print(f"\t {CHOICES_INDUSTRY[int(industry_choice) - 1]}")
     print("4. What is your favourite programming language?\n")
-    print(f"\t {CHOICES_LANGUAGE[int(favourite_language) - 1]} \n")
+    print(f"\t {CHOICES_LANGUAGE[int(favourite_language) - 1]}")
     print("5. How long have you been programming?\n")
-    print(f"\t {CHOICES_LENGTH[int(years_programming) - 1]} \n")
+    print(f"\t {CHOICES_LENGTH[int(years_programming) - 1]}")
     print("6. How many programming languages do you know?\n")
-    print(f"\t {CHOICES_LANGUAGE_NUM[int(num_languages) - 1]} \n")
+    print(f"\t {CHOICES_LANGUAGE_NUM[int(num_languages) - 1]}")
 
 
 def answer_check():
