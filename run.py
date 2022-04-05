@@ -40,10 +40,61 @@ industry_range = ["A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21"]
 industry_range_count = ["B14", "B15", "B16", "B17", "B18", "B19", "B20", "B21"]
 industry_range_avg = ["C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21"]
 
-print("\tIndustry \t Response Count \t Percentage")
-print("______________________________________________________________")
-for (a, b, c) in zip(industry_range, industry_range_count, industry_range_avg):
-    print(f"\t{calculations_sheet.acell(a).value} \t {calculations_sheet.acell(b).value} \t {calculations_sheet.acell(c).value}")
+# setting up response calculations for favourite language
+fav_lang_range = ["A25", "A26", "A27", "A28", "A29", "A30", "A31", "A32", "A33", "A34"]
+fav_lang_range_count = ["B25", "B26", "B27", "B28", "B29", "B30", "B31", "B32", "B33", "B34"]
+fav_lang_range_avg = ["C25", "C26", "C27", "C28", "C29", "C30", "C31", "C32", "C33", "C34"]
+
+# setting up response calculations for years coding
+years_coding_range = ["A38", "A39", "A40", "A41", "A42", "A43"]
+years_coding_range_count = ["B38", "B39", "B40", "B41", "B42", "B43"]
+years_coding_range_avg = ["C38", "C39", "C40", "C41", "C42", "C43"]
+
+# setting up response calculations for number of languages known
+num_languages_range = ["A47", "A48", "A49", "A50", "A51", "A52", "A53"]
+num_languages_range_count = ["B47", "B48", "B49", "B50", "B51", "B52", "B53"]
+num_languages_range_avg = ["C47", "C48", "C49", "C50", "C51", "C52", "C53"]
+
+
+
+def industry_averages():
+    """Prints industry averages to terminal."""
+    print("\t____________________________________________________________")
+    for (a, b, c) in zip(industry_range, industry_range_count, industry_range_avg):
+        print(f"\tIndustry: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    print("\t____________________________________________________________")
+
+
+def fav_lang_averages():
+    """Prints favourite language averages to terminal."""
+    print("\t____________________________________________________________")
+    for (a, b, c) in zip(fav_lang_range, fav_lang_range_count, fav_lang_range_avg):
+        print(f"\tFavourite Language: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    print("\t____________________________________________________________")
+
+
+def years_coding_averages():
+    """Prints years coding averages to terminal."""
+    print("\t____________________________________________________________")
+    for (a, b, c) in zip(years_coding_range, years_coding_range_count, years_coding_range_avg):
+        print(f"\tYears Coding: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    print("\t____________________________________________________________")
+
+
+def num_languages_averages():
+    """Prints number of languages averages to terminal."""
+    print("\t____________________________________________________________")
+    for (a, b, c) in zip(num_languages_range, num_languages_range_count, num_languages_range_avg):
+        print(f"\tNumber of Languages: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    print("\t____________________________________________________________")
+
+
+
+
+industry_averages()
+fav_lang_averages()
+years_coding_averages()
+num_languages_averages()
 
 
 def user_input():
@@ -422,4 +473,4 @@ def main():
 
 
 
-    
+
