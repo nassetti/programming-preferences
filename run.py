@@ -494,7 +494,7 @@ def main():
     print("\t1: Answer the 'Programming Preferences' survey")
     print("\t2: View aggregated data from user responses")
     global read_or_write
-    read_or_write = str(input("/n"))
+    read_or_write = str(input("\n"))
     if read_or_write == "1":
         user_input()
     elif read_or_write == "2":
