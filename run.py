@@ -453,21 +453,33 @@ def view_data():
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
+            while continue_review != "N" and continue_review != "Y":
+                print("\t Please enter 'Y' for yes and 'N' for no.\n")
+                continue_review = str(input("\n")).upper()
         elif review_question == "4":
             fav_lang_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
+            while continue_review != "N" and continue_review != "Y":
+                print("\t Please enter 'Y' for yes and 'N' for no.\n")
+                continue_review = str(input("\n")).upper()
         elif review_question == "5":
             years_coding_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
+            while continue_review != "N" and continue_review != "Y":
+                print("\t Please enter 'Y' for yes and 'N' for no.\n")
+                continue_review = str(input("\n")).upper()
         elif review_question == "6":
             num_languages_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
+            while continue_review != "N" and continue_review != "Y":
+                print("\t Please enter 'Y' for yes and 'N' for no.\n")
+                continue_review = str(input("\n")).upper()
         else:
             print("Please enter '3', '4', '5', or '6' to review responses.")
             review_question = str(input("\n"))
