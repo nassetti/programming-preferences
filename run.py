@@ -110,6 +110,24 @@ def user_input():
     ]
     # add responses to datasheet
     add_to_sheet(user_responses)
+    # ask if user wants to view other responses
+    print("\n\tWould you like to review average responses from other users?")
+    print("\tPlease enter 'Y' for yes and 'N' for no.")
+    global review_responses
+    review_responses = str(input("\n")).upper()
+    while review_responses != "Y" and review_responses !="N":
+        if review_responses == "Y":
+            print("Starting review...")
+            view_data()
+        elif review_responses == "N":
+            print("Thank you for your answers.")
+            print("Please refresh the page to start again.")
+        else:
+            print("You seem to have entered something different than expected.")
+            print("\n\tWould you like to review average responses from other users?")
+            print("\tPlease enter 'Y' for yes and 'N' for no.")
+            review_responses = str(input("\n")).upper()
+    
 
 
 def question_one():
