@@ -56,45 +56,28 @@ num_languages_range_count = ["B47", "B48", "B49", "B50", "B51", "B52", "B53"]
 num_languages_range_avg = ["C47", "C48", "C49", "C50", "C51", "C52", "C53"]
 
 
-
 def industry_averages():
     """Prints industry averages to terminal."""
-    print("\t____________________________________________________________")
     for (a, b, c) in zip(industry_range, industry_range_count, industry_range_avg):
         print(f"\tIndustry: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
-    print("\t____________________________________________________________")
 
 
 def fav_lang_averages():
     """Prints favourite language averages to terminal."""
-    print("\t____________________________________________________________")
     for (a, b, c) in zip(fav_lang_range, fav_lang_range_count, fav_lang_range_avg):
         print(f"\tFavourite Language: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
-    print("\t____________________________________________________________")
 
 
 def years_coding_averages():
     """Prints years coding averages to terminal."""
-    print("\t____________________________________________________________")
     for (a, b, c) in zip(years_coding_range, years_coding_range_count, years_coding_range_avg):
         print(f"\tYears Coding: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
-    print("\t____________________________________________________________")
 
 
 def num_languages_averages():
     """Prints number of languages averages to terminal."""
-    print("\t____________________________________________________________")
     for (a, b, c) in zip(num_languages_range, num_languages_range_count, num_languages_range_avg):
         print(f"\tNumber of Languages: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
-    print("\t____________________________________________________________")
-
-
-
-
-industry_averages()
-fav_lang_averages()
-years_coding_averages()
-num_languages_averages()
 
 
 def user_input():
@@ -450,7 +433,48 @@ def print_averages():
 
 def view_data():
     """Counterpart function to user_input for reading response data"""
-    return
+    print("Here you can review averages to the survey questions.")
+
+    print("1. What is your name?\n")
+    print("2. What is your email?\n")
+    print("3. What industry do you work in?\n")
+    print("4. What is your favourite programming language?\n")
+    print("5. How long have you been programming?\n")
+    print("6. How many programming languages do you know?\n")
+    print("Which question would you like to see the averages for?")
+    print("You can only view the averages for questions 3-6.")
+    print("Please input the number of the question you would like to review:")
+    review_question = str(input("\n"))
+    global continue_review
+    continue_review = "Y"
+    while continue_review != "N":
+        if review_question == "3":
+            industry_averages()
+        elif review_question == "4":
+            fav_lang_averages()
+        elif review_question == "5":
+            years_coding_averages()
+        elif review_question == "6":
+            num_languages_averages()
+            print("\tWould you like to continue reviewing responses? \n")
+            print("\tEnter 'Y' for yes and 'N' for no.\n")
+            continue_review = str(input("\n")).upper()
+        else:
+            print("Please enter '3', '4', '5', or '6' to review responses.")
+            review_question = str(input("\n"))
+    print("\tWould you like to answer the 'Programming Preferences survey?'\n")
+    print("\tEnter 'Y' for yes and 'N' for no.\n")
+    answer_survey = str(input("\n")).upper()
+    if answer_survey == "Y":
+        print("\tStarting survey... \n")
+        user_input()
+    elif answer_survey == "N":
+        print("\tThank you for taking the time to take part.")
+        print("\tPlease refresh the page to start again.")
+    else: 
+        print("\tPlease enter 'Y' for yes and 'N' for no.")
+        print("\tWould you like to answer the 'Programming Preferences survey?'\n")
+        answer_survey = str(input("\n")).upper()
 
 
 def main():
@@ -471,6 +495,6 @@ def main():
         read_or_write = str(input("/n"))
 
 
-
+main()
 
 
