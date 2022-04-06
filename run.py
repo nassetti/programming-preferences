@@ -450,10 +450,19 @@ def view_data():
     while continue_review != "N":
         if review_question == "3":
             industry_averages()
+            print("\tWould you like to continue reviewing responses? \n")
+            print("\tEnter 'Y' for yes and 'N' for no.\n")
+            continue_review = str(input("\n")).upper()
         elif review_question == "4":
             fav_lang_averages()
+            print("\tWould you like to continue reviewing responses? \n")
+            print("\tEnter 'Y' for yes and 'N' for no.\n")
+            continue_review = str(input("\n")).upper()
         elif review_question == "5":
             years_coding_averages()
+            print("\tWould you like to continue reviewing responses? \n")
+            print("\tEnter 'Y' for yes and 'N' for no.\n")
+            continue_review = str(input("\n")).upper()
         elif review_question == "6":
             num_languages_averages()
             print("\tWould you like to continue reviewing responses? \n")
