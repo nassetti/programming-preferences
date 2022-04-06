@@ -492,7 +492,7 @@ def main():
         view_data()
     else:
         print("Please enter 1 or 2 and press enter.")
-        read_or_write = str(input("/n"))
+        read_or_write = str(input("\n"))
 
 
 main()
