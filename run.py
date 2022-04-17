@@ -613,13 +613,14 @@ def main():
     print("\t2: View aggregated data from user responses")
     global read_or_write
     read_or_write = str(input("\n"))
-    if read_or_write == "1":
-        user_input()
-    elif read_or_write == "2":
-        view_data()
-    else:
-        print("Please enter 1 or 2 and press enter.")
-        read_or_write = str(input("\n"))
+    while 1 == 1:
+        if read_or_write == "1":
+            user_input()
+        elif read_or_write == "2":
+            view_data()
+        else:
+            print("Please enter 1 or 2 and press enter.")
+            read_or_write = str(input("\n"))
 
 
 if __name__ == '__main__':
