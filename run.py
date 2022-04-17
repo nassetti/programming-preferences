@@ -41,9 +41,18 @@ industry_range_count = ["B14", "B15", "B16", "B17", "B18", "B19", "B20", "B21"]
 industry_range_avg = ["C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21"]
 
 # setting up response calculations for favourite language
-fav_lang_range = ["A25", "A26", "A27", "A28", "A29", "A30", "A31", "A32", "A33", "A34"]
-fav_lang_range_count = ["B25", "B26", "B27", "B28", "B29", "B30", "B31", "B32", "B33", "B34"]
-fav_lang_range_avg = ["C25", "C26", "C27", "C28", "C29", "C30", "C31", "C32", "C33", "C34"]
+fav_lang_range = [
+    "A25", "A26", "A27", "A28", "A29",
+    "A30", "A31", "A32", "A33", "A34"
+]
+fav_lang_range_count = [
+    "B25", "B26", "B27", "B28",
+    "B29", "B30", "B31", "B32", "B33", "B34"
+]
+fav_lang_range_avg = [
+    "C25", "C26", "C27", "C28", "C29",
+    "C30", "C31", "C32", "C33", "C34"
+]
 
 # setting up response calculations for years coding
 years_coding_range = ["A38", "A39", "A40", "A41", "A42", "A43"]
@@ -58,26 +67,47 @@ num_languages_range_avg = ["C47", "C48", "C49", "C50", "C51", "C52", "C53"]
 
 def industry_averages():
     """Prints industry averages to terminal."""
-    for (a, b, c) in zip(industry_range, industry_range_count, industry_range_avg):
-        print(f"\tIndustry: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    for (a, b, c) in zip(
+            industry_range, industry_range_count, industry_range_avg
+    ):
+        # setting up variables to reduce overall line length to under 79
+        x = calculations_sheet.acell(a).value
+        y = calculations_sheet.acell(b).value
+        z = calculations_sheet.acell(c).value
+        print(f"\tIndustry: {x} | Count: {y} | Percentage: {z} \n")
 
 
 def fav_lang_averages():
     """Prints favourite language averages to terminal."""
-    for (a, b, c) in zip(fav_lang_range, fav_lang_range_count, fav_lang_range_avg):
-        print(f"\tFavourite Language: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    for (a, b, c) in zip(
+        fav_lang_range, fav_lang_range_count, fav_lang_range_avg
+    ):
+        x = calculations_sheet.acell(a).value
+        y = calculations_sheet.acell(b).value
+        z = calculations_sheet.acell(c).value
+        print(f"\tFavourite Language: {x} | Count: {y} | Percentage: {z} \n")
 
 
 def years_coding_averages():
     """Prints years coding averages to terminal."""
-    for (a, b, c) in zip(years_coding_range, years_coding_range_count, years_coding_range_avg):
-        print(f"\tYears Coding: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    for (a, b, c) in zip(
+        years_coding_range, years_coding_range_count, years_coding_range_avg
+    ):
+        x = calculations_sheet.acell(a).value
+        y = calculations_sheet.acell(b).value
+        z = calculations_sheet.acell(c).value
+        print(f"\tYears Coding: {x} | Count: {y} | Percentage: {z} \n")
 
 
 def num_languages_averages():
     """Prints number of languages averages to terminal."""
-    for (a, b, c) in zip(num_languages_range, num_languages_range_count, num_languages_range_avg):
-        print(f"\tNumber of Languages: {calculations_sheet.acell(a).value} | Count: {calculations_sheet.acell(b).value} | Percentage: {calculations_sheet.acell(c).value} \n")
+    for (a, b, c) in zip(
+        num_languages_range, num_languages_range_count, num_languages_range_avg
+    ):
+        x = calculations_sheet.acell(a).value
+        y = calculations_sheet.acell(b).value
+        z = calculations_sheet.acell(c).value
+        print(f"\tNumber of Languages: {x} | Count: {y} | Percentage: {z} \n")
 
 
 def user_input():
@@ -116,17 +146,19 @@ def user_input():
     global review_responses
     review_responses = str(input("\n")).upper()
     if review_responses == "Y":
-        print("Starting review...")
+        print("\nStarting review...")
         view_data()
     elif review_responses == "N":
         print("Thank you for your answers.")
         print("Please refresh the page to start again.")
     else:
         print("You seem to have entered something different than expected.")
-        print("\n\tWould you like to review average responses from other users?")
+        print(
+            "\n\tWould you like to review " +
+            "average responses from other users?")
         print("\tPlease enter 'Y' for yes and 'N' for no.")
         review_responses = str(input("\n")).upper()
-    
+
 
 def question_one():
     """Code for question one."""
@@ -181,8 +213,10 @@ def question_three():
         print(f"\t{i + 1}: {CHOICES_INDUSTRY[i]}")
     global industry_choice
     industry_choice = str(input("\n"))
+    global selection
+    selection = CHOICES_INDUSTRY[int(industry_choice)-1]
     print(
-        f"\tYou have selected '{CHOICES_INDUSTRY[int(industry_choice)-1]}'. Is that correct? \n")
+        f"\tYou have selected '{selection}'. Is that correct? \n")
     correct_industry = str(input("\tType 'Y' for yes or 'N' for no: \n"))
     correct_industry = correct_industry.upper()
     while correct_industry != "Y":
@@ -192,7 +226,7 @@ def question_three():
             print("\tPlease input your selection again: \n")
             industry_choice = str(input("\n"))
             print(
-                f"\t'{CHOICES_INDUSTRY[int(industry_choice)-1]}' - Is that correct? \n")
+                f"\t'{selection}' - Is that correct? \n")
             correct_industry = str(
                 input("\tType 'Y' for yes or 'N' for no: \n")).upper()
         else:
@@ -212,8 +246,10 @@ def question_four():
         print(f"\t{i + 1}: {CHOICES_LANGUAGE[i]}")
     global favourite_language
     favourite_language = str(input("\n"))
+    global lang_select
+    lang_select = CHOICES_LANGUAGE[int(favourite_language)-1]
     print(
-        f"\tYou have selected '{CHOICES_LANGUAGE[int(favourite_language)-1]}'. Is that correct? \n")
+        f"\tYou have selected '{lang_select}'. Is that correct? \n")
     correct_language = str(
         input("\tType 'Y' for yes or 'N' for no: \n")).upper()
     while correct_language != "Y":
@@ -223,7 +259,7 @@ def question_four():
             print("\tPlease input your selection again: \n")
             favourite_language = str(input("\n"))
             print(
-                f"\t'{CHOICES_LANGUAGE[int(favourite_language)-1]}' - Is that correct? \n")
+                f"\t'{lang_select}' - Is that correct? \n")
             correct_language = str(
                 input("\tType 'Y' for yes or 'N' for no: \n")).upper()
         else:
@@ -237,13 +273,17 @@ def question_five():
     """Code for question five."""
     print("5. How long have you been programming?")
     print("\tPlease select from the choices below.")
-    print("\tTo make a selection, please type the number of your selection. \n")
+    print(
+        "\tTo make a selection, " +
+        "please type the number of your selection. \n")
     for i in range(len(CHOICES_LENGTH)):
         print(f"\t{i + 1}: {CHOICES_LENGTH[i]}")
     global years_programming
     years_programming = str(input("\n"))
+    global select_years
+    select_years = CHOICES_LENGTH[int(years_programming)-1]
     print(
-        f"\tYou have selected '{CHOICES_LENGTH[int(years_programming)-1]}'. Is that correct? \n")
+        f"\tYou have selected '{select_years}'. Is that correct? \n")
     correct_years = str(input("\tType 'Y' for yes or 'N' for no: \n")).upper()
     while correct_years != "Y":
         if correct_years == "Y":
@@ -252,7 +292,7 @@ def question_five():
             print("\tPlease input your selection again: \n")
             years_programming = str(input("\n"))
             print(
-                f"\t'{CHOICES_LENGTH[int(years_programming)-1]}' - Is that correct? \n")
+                f"\t'{select_years}' - Is that correct? \n")
             correct_years = str(
                 input("\tType 'Y' for yes or 'N' for no: \n")).upper()
         else:
@@ -266,13 +306,19 @@ def question_six():
     """Code for question six."""
     print("6. How many programming languages do you know?")
     print("\tPlease select from the choices below.")
-    print("\tTo make a selection, please type the number of your selection. \n")
+    print(
+        "\tTo make a selection, " +
+        "please type the number of your selection. \n")
     for i in range(len(CHOICES_LANGUAGE_NUM)):
         print(f"\t{i + 1}: {CHOICES_LANGUAGE_NUM[i]}")
     global num_languages
     num_languages = str(input("\n"))
+    global select_num
+    # creating variable to link selection with array choice
+    # shortening for PEP8 line length
+    select_num = CHOICES_LANGUAGE_NUM[int(num_languages)-1]
     print(
-        f"\tYou have selected '{CHOICES_LANGUAGE_NUM[int(num_languages)-1]}'. Is that correct? \n")
+        f"\tYou have selected '{select_num}'. Is that correct? \n")
     correct_num = str(input("\tType 'Y' for yes or 'N' for no: \n")).upper()
     while correct_num != "Y":
         if correct_num == "Y":
@@ -281,7 +327,7 @@ def question_six():
             print("\tPlease input your selection again: \n")
             num_languages = str(input("\n"))
             print(
-                f"\t'{CHOICES_LANGUAGE_NUM[int(num_languages)-1]}' - Is that correct? \n")
+                f"\t'{select_num}' - Is that correct? \n")
             correct_num = str(
                 input("\tType 'Y' for yes or 'N' for no: \n")).upper()
         else:
@@ -322,7 +368,9 @@ def answer_check():
             results()
             global wrong_question
             wrong_question = str(
-                input("\tPlease enter the question number to answer again: \n"))
+                input(
+                    "\tPlease enter the question " +
+                    "number to answer again: \n"))
             if wrong_question == "1":
                 question_one()
                 results()
@@ -331,10 +379,14 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the question " +
+                            "number to answer again: \n"))
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will now " +
+                        "be recorded on our server.")
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -348,10 +400,14 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the question " +
+                            "number to answer again: \n"))
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will now " +
+                        "be recorded on our server.")
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -365,10 +421,14 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the question " +
+                            "number to answer again: \n"))
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will now " +
+                        "be recorded on our server.")
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -382,10 +442,14 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the question " +
+                            "number to answer again: \n"))
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will now be recorded on our server."
+                    )
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -399,10 +463,15 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the question " +
+                            "number to answer again: \n"))
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will now " +
+                        "be recorded on our server."
+                    )
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -416,10 +485,17 @@ def answer_check():
                     input("\tType 'Y' for yes or 'N' for no \n")).upper()
                 if correct_answers == "N":
                     wrong_question = str(
-                        input("\tPlease enter the question number to answer again: \n"))
+                        input(
+                            "\tPlease enter the " +
+                            "question number to answer again: \n"
+                            )
+                    )
                 elif correct_answers == "Y":
                     print("\tThank you for your corrections.")
-                    print("\tYour responses will now be recorded on our server.")
+                    print(
+                        "\tYour responses will " +
+                        "now be recorded on our server."
+                    )
                 else:
                     print("\tDid you type 'Y' for yes and 'N' for no? \n")
                     print("\tWere all the responses above correct? \n")
@@ -477,7 +553,10 @@ def view_data():
                     print("4. What is your favourite programming language?\n")
                     print("5. How long have you been programming?\n")
                     print("6. How many programming languages do you know?\n")
-                    print("Please input the number of the question you would like to review:")
+                    print(
+                        "Please input the number of " +
+                        "the question you would like to review:"
+                    )
                     review_question = str(input("\n"))
         elif review_question == "4":
             fav_lang_averages()
@@ -492,7 +571,10 @@ def view_data():
                     print("4. What is your favourite programming language?\n")
                     print("5. How long have you been programming?\n")
                     print("6. How many programming languages do you know?\n")
-                    print("Please input the number of the question you would like to review:")
+                    print(
+                        "Please input the number of " +
+                        "the question you would like to review:"
+                    )
                     review_question = str(input("\n"))
         elif review_question == "5":
             years_coding_averages()
@@ -507,7 +589,10 @@ def view_data():
                     print("4. What is your favourite programming language?\n")
                     print("5. How long have you been programming?\n")
                     print("6. How many programming languages do you know?\n")
-                    print("Please input the number of the question you would like to review:")
+                    print(
+                        "Please input the number of " +
+                        "the question you would like to review:"
+                        )
                     review_question = str(input("\n"))
         elif review_question == "6":
             num_languages_averages()
@@ -522,7 +607,10 @@ def view_data():
                     print("4. What is your favourite programming language?\n")
                     print("5. How long have you been programming?\n")
                     print("6. How many programming languages do you know?\n")
-                    print("Please input the number of the question you would like to review:")
+                    print(
+                        "Please input the number of " +
+                        "the question you would like to review:"
+                    )
                     review_question = str(input("\n"))
         else:
             print("Please enter '3', '4', '5', or '6' to review responses.")
@@ -531,14 +619,17 @@ def view_data():
     print("\tEnter 'Y' for yes and 'N' for no.\n")
     answer_survey = str(input("\n")).upper()
     if answer_survey == "Y":
-        print("\tStarting survey... \n")
+        print("\n\tStarting survey... \n")
         user_input()
     elif answer_survey == "N":
         print("\tThank you for taking the time to take part.")
         print("\tPlease refresh the page to start again.")
-    else: 
+    else:
         print("\tPlease enter 'Y' for yes and 'N' for no.")
-        print("\tWould you like to answer the 'Programming Preferences survey?'\n")
+        print(
+            "\tWould you like to answer the " +
+            "'Programming Preferences survey?'\n"
+        )
         answer_survey = str(input("\n")).upper()
 
 
@@ -560,6 +651,5 @@ def main():
         read_or_write = str(input("\n"))
 
 
-main()
-
-
+if __name__ == '__main__':
+    main()
