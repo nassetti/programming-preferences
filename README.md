@@ -1,31 +1,35 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Programming Preferences
+A Python Terminal project designed to allow users to complete a survey regarding their programming background and view the average results of other user responses. 
 
-Welcome nassetti,
+## Scope / Goals
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+* The aim for this was project was to write a piece of software that would allow a user to both read-from and write-to the backend Google Sheet that recorded the site's data. To achieve this, two separate main functions were written: one that allowed users to complete the survey themselves, answering all six questions and then having the responses recorded in the datasheet, the second function enabled users to read from the datasheet - namely, enabling them to view the averaged results for the questions which did not contain personal data. 
 
-## Reminders
+## Features
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+* Write-To
+    * The write-to portion of the project allows the user to complete the Programming Preferences survey, which consists of six questions. Four of these questions are multiple choice options which allows some analysis to be done with them, with the other two recoding name and email. Once a user has completed all six questions, the answers are automatically recorded in the datasheet allowing for instant updates to the averages that can be read in the Read-From section. Below, one can see a test portion of the write-to section showing a fully completed survey. 
+    <img src="assets/write-to.png" alt="Image of completed survey.">
 
-## Creating the Heroku app
+* Read-From
+    * The read-from section allows the user to view available data from the Programming Preferences survey. It does not return any potentially confidential information, as it can only return data from the multiple choice questions in the survey. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* User Input Check
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Logic
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Testing / Validation 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* PEP8 Validation
+    * <img src="assets/pep8-validation.png" alt="Image of PEP8 validator stating no errors found.">
 
-Connect your GitHub repository and deploy as normal.
+* Decision Tree Testing
+    * To test that the code was working as expected, I ran through the decision tree as many times as possible at different points to see whether or not there were any points that did not work as expected. As the code for many of the questions remained very similar, it was not necessary, or efficient, to test each branch of the decision tree so only main branches were tested.
 
-## Constraints
+## Deployment
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* The Programmming Preferences project was deployed via Heroku and can be accessed via the webpage's online CLI. The code for the use of the Heroku app is forked from the CI Python Template referenced below.
 
------
-Happy coding!
+# References
+
+* [CodeInstitue Python / Heroku Template] (https://github.com/Code-Institute-Org/python-essentials-template)
