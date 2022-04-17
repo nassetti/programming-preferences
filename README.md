@@ -15,9 +15,6 @@ A Python Terminal project designed to allow users to complete a survey regarding
     * The read-from section allows the user to view available data from the Programming Preferences survey. It does not return any potentially confidential information, as it can only return data from the multiple choice questions in the survey. Below, one can see a screen shot of one potential returned section from the read-from code - this section shows one the number of responses per choice and the percentage the choice represents of total respondents.
     <img src="assets/read-from.png" alt="Image of favourite coding language responses from user survery answers.">
 
-* User Input Check
-
-## Logic
 
 ## Testing / Validation 
 
