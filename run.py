@@ -583,8 +583,6 @@ def view_data():
                 print("\n")
             else:
                 print("Please enter 'Y' or 'N' to continue review.")
-            print("Please enter '3', '4', '5', or '6' to review responses.")
-            review_question = str(input("\n"))
     print("\tWould you like to answer the 'Programming Preferences survey?'\n")
     print("\tEnter 'Y' for yes and 'N' for no.\n")
     answer_survey = str(input("\n")).upper()
