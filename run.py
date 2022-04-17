@@ -526,7 +526,6 @@ def print_averages():
 def view_data():
     """Counterpart function to user_input for reading response data"""
     print("Here you can review averages to the survey questions.")
-
     print("1. What is your name?\n")
     print("2. What is your email?\n")
     print("3. What industry do you work in?\n")
@@ -545,74 +544,45 @@ def view_data():
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
-            while continue_review != "N" and continue_review != "Y":
-                print("\t Please enter 'Y' for yes and 'N' for no.\n")
-                continue_review = str(input("\n")).upper()
-                if continue_review == "Y":
-                    print("3. What industry do you work in?\n")
-                    print("4. What is your favourite programming language?\n")
-                    print("5. How long have you been programming?\n")
-                    print("6. How many programming languages do you know?\n")
-                    print(
-                        "Please input the number of " +
-                        "the question you would like to review:"
-                    )
-                    review_question = str(input("\n"))
+            if continue_review == "Y":
+                view_data()
+            elif continue_review == "N":
+                print("\n")
+            else:
+                print("Please enter 'Y' or 'N' to continue review.")
         elif review_question == "4":
             fav_lang_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
-            while continue_review != "N" and continue_review != "Y":
-                print("\t Please enter 'Y' for yes and 'N' for no.\n")
-                continue_review = str(input("\n")).upper()
-                if continue_review == "Y":
-                    print("3. What industry do you work in?\n")
-                    print("4. What is your favourite programming language?\n")
-                    print("5. How long have you been programming?\n")
-                    print("6. How many programming languages do you know?\n")
-                    print(
-                        "Please input the number of " +
-                        "the question you would like to review:"
-                    )
-                    review_question = str(input("\n"))
+            if continue_review == "Y":
+                view_data()
+            elif continue_review == "N":
+                print("\n")
+            else:
+                print("Please enter 'Y' or 'N' to continue review.")
         elif review_question == "5":
             years_coding_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
-            while continue_review != "N" and continue_review != "Y":
-                print("\t Please enter 'Y' for yes and 'N' for no.\n")
-                continue_review = str(input("\n")).upper()
-                if continue_review == "Y":
-                    print("3. What industry do you work in?\n")
-                    print("4. What is your favourite programming language?\n")
-                    print("5. How long have you been programming?\n")
-                    print("6. How many programming languages do you know?\n")
-                    print(
-                        "Please input the number of " +
-                        "the question you would like to review:"
-                        )
-                    review_question = str(input("\n"))
+            if continue_review == "Y":
+                view_data()
+            elif continue_review == "N":
+                print("\n")
+            else:
+                print("Please enter 'Y' or 'N' to continue review.")
         elif review_question == "6":
             num_languages_averages()
             print("\tWould you like to continue reviewing responses? \n")
             print("\tEnter 'Y' for yes and 'N' for no.\n")
             continue_review = str(input("\n")).upper()
-            while continue_review != "N" and continue_review != "Y":
-                print("\t Please enter 'Y' for yes and 'N' for no.\n")
-                continue_review = str(input("\n")).upper()
-                if continue_review == "Y":
-                    print("3. What industry do you work in?\n")
-                    print("4. What is your favourite programming language?\n")
-                    print("5. How long have you been programming?\n")
-                    print("6. How many programming languages do you know?\n")
-                    print(
-                        "Please input the number of " +
-                        "the question you would like to review:"
-                    )
-                    review_question = str(input("\n"))
-        else:
+            if continue_review == "Y":
+                view_data()
+            elif continue_review == "N":
+                print("\n")
+            else:
+                print("Please enter 'Y' or 'N' to continue review.")
             print("Please enter '3', '4', '5', or '6' to review responses.")
             review_question = str(input("\n"))
     print("\tWould you like to answer the 'Programming Preferences survey?'\n")
